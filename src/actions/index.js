@@ -33,7 +33,7 @@ export function createCar(garage, body, callback) {
   };
 }
 
-export function destroyCar(history, id) {
+export function destroyCar(id, history) {
   const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`, {
     method: 'DELETE'
   }).then(response => response.json())

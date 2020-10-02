@@ -15,10 +15,7 @@ class CarsShow extends Component {
   }
 
   handleClick = () => {
-    this.props.destroyCar(
-      this.props.history, 
-      this.props.car.id
-    );
+    this.props.destroyCar(this.props.car.id, this.props.history);
   }
 
   render() {

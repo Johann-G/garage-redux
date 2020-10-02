@@ -9,14 +9,18 @@ import { fetchCars } from "../actions/index";
 
 class CarsIndex extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.textInput = React.createRef();
-  // }
-
   componentDidMount() {
     this.props.fetchCars(this.props.garage);
   }
+
+
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.cars !== this.props.cars) {
+  //     this.props.fetchCars(newProps.garage);
+  //   }
+  // }
+
+
 
   renderList = (car) => {
     return(
