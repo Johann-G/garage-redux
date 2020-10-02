@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'; 
 
-import { fetchCars } from "../actions";
+import { fetchCars } from "../actions/index";
 
 // import Message from "../components/message";
 
@@ -14,10 +14,10 @@ class CarsIndex extends Component {
   //   this.textInput = React.createRef();
   // }
 
-  // componentWillMount() {
-  //   this.fetchMessages();
-  // }
-  
+  componentDidMount() {
+    this.props.fetchCars(this.props.garage);
+  }
+
   renderList = (car) => {
     return(
       <Link to={`/cars/${car.id}`} key={car.id}>
@@ -42,7 +42,8 @@ class CarsIndex extends Component {
 
 function mapStateToProps(state) {
   return {
-    cars: state.cars
+    cars: state.cars,
+    garage: state.garage
   };
 }
 
